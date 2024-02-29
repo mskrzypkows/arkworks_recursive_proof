@@ -1,0 +1,43 @@
+[package]
+name = "recursive_proof"
+version = "0.1.0"
+edition = "2021"
+
+# See more keys and their definitions at https://doc.rust-lang.org/cargo/reference/manifest.html
+
+[patch.crates-io]
+ark-std = { git = "https://github.com/arkworks-rs/std", rev = "4cee4bc18ff6b0159c00d48622181db145938601" }
+ark-ff = { git = "https://github.com/arkworks-rs/algebra", rev = "3a6156785e12eeb9083a7a402ac037de01f6c069" }
+ark-ec = { git = "https://github.com/arkworks-rs/algebra", rev = "3a6156785e12eeb9083a7a402ac037de01f6c069" }
+ark-poly = { git = "https://github.com/arkworks-rs/algebra", rev = "3a6156785e12eeb9083a7a402ac037de01f6c069" }
+ark-serialize = { git = "https://github.com/arkworks-rs/algebra", rev = "3a6156785e12eeb9083a7a402ac037de01f6c069" }
+ark-r1cs-std = { git = "https://github.com/arkworks-rs/r1cs-std/", rev = "4020fbc22625621baa8125ede87abaeac3c1ca26" }
+ark-crypto-primitives = { git = "https://github.com/arkworks-rs/crypto-primitives", rev = "b93e00568e29d98c738b31680aeaec6ed7c505f4" }
+
+
+[dependencies]
+anyhow = "1.0.76"
+rand = "0.8.5"
+ark-std = { git = "https://github.com/arkworks-rs/std", rev = "4cee4bc18ff6b0159c00d48622181db145938601", features = [
+    "std",
+] }
+ark-ec = { git = "https://github.com/arkworks-rs/algebra", rev = "3a6156785e12eeb9083a7a402ac037de01f6c069" }
+ark-ff = { git = "https://github.com/arkworks-rs/algebra", rev = "3a6156785e12eeb9083a7a402ac037de01f6c069" }
+ark-poly = { git = "https://github.com/arkworks-rs/algebra", rev = "3a6156785e12eeb9083a7a402ac037de01f6c069" }
+ark-serialize = { git = "https://github.com/arkworks-rs/algebra", rev = "3a6156785e12eeb9083a7a402ac037de01f6c069" }
+ark-bls12-381 = { git = "https://github.com/arkworks-rs/algebra", features = [
+    "curve",
+    "scalar_field",
+    "std",
+], rev = "3a6156785e12eeb9083a7a402ac037de01f6c069" }
+ark-bw6-767 = { git = "https://github.com/arkworks-rs/algebra", rev = "3a6156785e12eeb9083a7a402ac037de01f6c069" }
+ark-relations = { version = "0.4.0", features = ["std"] }
+ark-groth16 = { git = "https://github.com/arkworks-rs/groth16", features = [
+    "std",
+    "parallel",
+    "r1cs",
+], rev = "8e5c347bd8776645e046ca7ec1e4b9ff4b97c054" }
+ark-r1cs-std = { git = "https://github.com/arkworks-rs/r1cs-std/", rev = "4020fbc22625621baa8125ede87abaeac3c1ca26" }
+ark-crypto-primitives = { git = "https://github.com/arkworks-rs/crypto-primitives", features = [
+    "sponge",
+], rev = "b93e00568e29d98c738b31680aeaec6ed7c505f4" }
